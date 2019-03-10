@@ -1,11 +1,4 @@
 # WordLadder
-Compile the project
+Compile the project: `mvn compile`
 
-`mvn compile`
-
-Run the project
-
-`mvn test`
-
-Test the project
-
+Test the project:`mvn test`
