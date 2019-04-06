@@ -1,9 +1,7 @@
+package com.diving_fish.wordLadder.wordladder;
+
 import java.io.*;
 import java.util.*;
-
-class NotInDictException extends Exception {
-
-}
 
 class WordLink {
     public String first;
@@ -15,43 +13,40 @@ class WordLink {
 }
 
 public class WordLadder {
-    public static Set<String> dictionary = new TreeSet<String>();
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        System.out.print("Please enter the start word:");
-        String start = s.nextLine();
-        System.out.print("Please enter the end word:");
-        String end = s.nextLine();
-        System.out.println(generate_string(start, end));
-    }
+    public Set<String> dictionary = new TreeSet<String>();
 
-    public static String generate_string(String start, String end) {
-        initialize_dict();
+    public WordLadder(String path) {
+        File f = new File(path);
         try {
-            ArrayList<String> result = generate(start, end);
-            if (result.size() == 0) {
-                return "No Ladder.";
-            } else {
-                StringBuffer s = new StringBuffer();
-                for (String s2 : result) {
-                    s.append(s2);
-                    if (!s2.equals(end)) s.append("->");
-                }
-                return s.toString();
+            BufferedReader br = new BufferedReader(new FileReader(f));
+            String line;
+            while ((line = br.readLine()) != null) {
+                dictionary.add(line);
             }
-        } catch (NotInDictException e) {
-            return "Word is not in dictionary.";
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
-    public static ArrayList<String> generate(String start, String end) throws NotInDictException {
+
+    public String generate_string(String start, String end) {
+        ArrayList<String> result = generate(start, end);
+        if (result.size() == 0) {
+            return "No Ladder.";
+        } else {
+            StringBuffer s = new StringBuffer();
+            for (String s2 : result) {
+                s.append(s2);
+                if (!s2.equals(end)) s.append("->");
+            }
+            return s.toString();
+        }
+    }
+    public ArrayList<String> generate(String start, String end) {
         Queue<String> q = new LinkedList<String>();
         Set<String> searched = new TreeSet<String>();
         ArrayList<String> result = new ArrayList<String>();
         ArrayList<WordLink> wordLinks = new ArrayList<WordLink>();
         q.offer(start);
-        if (!in_dict(start) || !in_dict(end)) {
-            throw new NotInDictException();
-        }
         while (!q.isEmpty()) {
             String current = q.poll();
             if (current.equals(end)) {
@@ -78,25 +73,13 @@ public class WordLadder {
         }
         return result;
     }
-    private static void initialize_dict() {
-        File f = new File("src/main/java/dictionary.txt");
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(f));
-            String line;
-            while ((line = br.readLine()) != null) {
-                dictionary.add(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    private static boolean in_dict(String word) {
+    public boolean in_dict(String word) {
         return dictionary.contains(word);
     }
-    private static String replace_word(String word, char c, int index) {
+    private String replace_word(String word, char c, int index) {
         return word.substring(0, index) + c + word.substring(index+1);
     }
-    private static ArrayList<String> find_neighbor(String word) {
+    private ArrayList<String> find_neighbor(String word) {
         ArrayList<String> a = new ArrayList<String>();
         for (int i = 0; i < word.length(); i++) {
             for (char c = 'a'; c <= 'z'; c++) {
