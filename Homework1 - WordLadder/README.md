@@ -1,12 +1,4 @@
-# Redo WordLadder with SpringBoot
+# WordLadder
+Compile the project: `mvn compile`
 
-### Run:
-```
-mvn spring-boot:run
-```
-
-### Test:
-```
-localhost:8080/generate?start="code"&end="data"
-localhost:8080/in_dict?word="dictionary"
-```
+Test the project:`mvn test`
