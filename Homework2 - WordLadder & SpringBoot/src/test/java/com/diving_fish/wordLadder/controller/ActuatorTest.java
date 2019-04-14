@@ -1,6 +1,6 @@
 package com.diving_fish.wordLadder.controller;
-
 import com.diving_fish.wordLadder.WordLadderApplication;
+import com.diving_fish.wordLadder.controller.WordLadderController;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.junit.Assert;
@@ -19,37 +19,24 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.context.WebApplicationContext;
-
-import java.util.Map;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-/**
- * WorldLadderController Tester.
- *
- * @author <Authors name>
- * @since <pre>Mar, 7, 2019</pre>
- * @version 1.0
- */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes= WordLadderApplication.class)
 @ContextConfiguration(classes = WordLadderController.class)
-public class WordLadderControllerTest {
+public class ActuatorTest {
 
     protected MockMvc mockMvc;
     private MockHttpSession session;
-
-    @Autowired
-    protected WebApplicationContext wac;
     @Autowired
     private FilterChainProxy springSecurityFilterChain;
 
+    @Autowired
+    protected WebApplicationContext wac;
     @Before
     public void before() throws Exception {
-        // mocMVC init
         MockitoAnnotations.initMocks(this);
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).dispatchOptions(true).addFilters(this.springSecurityFilterChain).build();
         MvcResult result = mockMvc.perform(
@@ -62,31 +49,45 @@ public class WordLadderControllerTest {
 
     @After
     public void after() throws Exception {
+
     }
 
     @Test
-    public void testGetWordLadder() throws Exception {
-        MultiValueMap m = new LinkedMultiValueMap<String, String>();
-        m.add("start", "code");
-        m.add("end", "data");
+    public void testHealth() throws Exception {
         MvcResult result = mockMvc.perform(
-                MockMvcRequestBuilders.get("/generate").params(m).session(session)
-        ).andReturn();
-        JSONArray wordladder = JSONArray.fromObject(result.getResponse().getContentAsString());
-        Assert.assertEquals("error occurred when generating wordLadder", 5, wordladder.size());
+                MockMvcRequestBuilders.get("/actuator/health").session(session)
+        ).andExpect(status().isOk()).andReturn();
+        JSONObject response = JSONObject.fromObject(result.getResponse().getContentAsString());
+        String status = (String)response.get("status");
+        Assert.assertEquals("status: up => health", status, "UP");
     }
+
 
     @Test
-    public void testSearch() throws Exception {
+    public void testInfo() throws Exception {
         MvcResult result = mockMvc.perform(
-                MockMvcRequestBuilders.get("/in_dict")
-                        .param("word", "code").session(session)
-        ).andReturn();
-        int status = result.getResponse().getStatus();
-
-        Assert.assertEquals("data should be in dictionary", JSONObject.fromObject(result.getResponse().getContentAsString()).get("has"), true);
+                MockMvcRequestBuilders.get("/actuator/info").session(session)
+        ).andExpect(status().isOk()).andReturn();
+        JSONObject response = JSONObject.fromObject(result.getResponse().getContentAsString());
+        JSONObject app = (JSONObject) response.get("app");
+        String name = (String)app.get("name");
+        String encoding = (String)app.get("encoding");
+        Assert.assertEquals("check application name", name, "WordLadder");
+        Assert.assertEquals("check application encoding", encoding, "UTF-8");
     }
 
 
+    @Test
+    public void testEnvironment() throws Exception {
+        MvcResult result = mockMvc.perform(
+                MockMvcRequestBuilders.get("/actuator/env").session(session)
+        ).andExpect(status().isOk()).andReturn();
+        JSONObject response = JSONObject.fromObject(result.getResponse().getContentAsString());
+        JSONArray environment = (JSONArray) response.get("propertySources");
+        JSONObject info = (JSONObject)environment.get(3);
+        JSONObject properties = (JSONObject) info.get("properties");
+        JSONObject name = (JSONObject)properties.get("info.app.name");
+        String value = name.getString("value");
+        Assert.assertEquals("check application information", value, "WordLadder");
+    }
 }
-
