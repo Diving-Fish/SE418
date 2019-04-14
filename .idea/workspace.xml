@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3500b9e-226f-4fbc-a187-2401d3e93ffc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Homework1 - WordLadder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework1 - WordLadder/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/target/surefire-reports/2019-04-07T21-09-21_357-jvmRun1.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/target/surefire-reports/TEST-com.diving_fish.wordLadder.controller.WordLadderControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/target/surefire-reports/TEST-com.diving_fish.wordLadder.wordladder.WordLadderTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/target/surefire-reports/com.diving_fish.wordLadder.controller.WordLadderControllerTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/target/surefire-reports/com.diving_fish.wordLadder.wordladder.WordLadderTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/target/test-classes/META-INF/WordLadder.kotlin_module" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,12 +20,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/src/main/java/com/diving_fish/wordLadder/WordLadderApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -33,7 +42,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="425">
               <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="30" selection-end-column="21" />
             </state>
           </provider>
@@ -56,7 +65,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,10 +171,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tx" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -198,9 +207,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -228,10 +236,10 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/pom.xml">
+    <entry file="file://$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/src/main/java/com/diving_fish/wordLadder/WordLadderApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="30" selection-end-column="21" />
+        <state relative-caret-position="170">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -242,10 +250,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/src/main/java/com/diving_fish/wordLadder/WordLadderApplication.java">
+    <entry file="file://$PROJECT_DIR$/Homework2 - WordLadder &amp; SpringBoot/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="425">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="30" selection-end-column="21" />
         </state>
       </provider>
     </entry>
