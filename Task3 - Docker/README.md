@@ -24,14 +24,14 @@ EXPOSE 8080
 COPY ./wordladder.jar /wordladder.jar
 ENTRYPOINT [ "java", "-jar", "/wordladder.jar" ]
 ```
-
+![2][]
 ## Run Docker
 
 ```
 docker run wordladder:v1.0 -p 8080:8080
 ```
+![1][]
 
-![2][]
 
 ## Push Docker
 
@@ -40,7 +40,7 @@ docker tag wordladder:v1.0 divingfish/wordladder:v1.0
 docker push divingfish/wordladder:v1.0
 ```
 
-![1][]
+
 
 Link: https://hub.docker.com/r/divingfish/wordladder
 
