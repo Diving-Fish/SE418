@@ -1,4 +1,4 @@
-package com.diving_fish.wordLadder.wordladder;
+package com.diving_fish.wordladder.wordladder;
 
 import java.io.*;
 import java.util.*;

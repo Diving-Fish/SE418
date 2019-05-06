@@ -1,4 +1,4 @@
-package com.diving_fish.wordLadder.config;
+package com.diving_fish.login.config;
 
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +24,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -39,23 +37,44 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .withUser("user").password(new BCryptPasswordEncoder().encode("user")).roles("USER");
     }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
         http
                 .cors().and().csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/login").permitAll()
-                .antMatchers("/actuator/**").permitAll()
-                .antMatchers("/generate", "/in_dict").permitAll()
-                .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
-                .permitAll()
-                .antMatchers("/")
-                .permitAll()
-                .antMatchers("/**")
-                .authenticated()
+                .antMatchers("/").permitAll()
                 .and()
                 .formLogin()
+                .successHandler(new AuthenticationSuccessHandler() {
+                    @Override
+                    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
+                        PrintWriter out = response.getWriter();
+                        response.setContentType("application/json;charset=utf-8");
+                        JSONObject jsonObject = new JSONObject();
+                        jsonObject.put("status", 200);
+                        jsonObject.put("message", "login success");
+                        jsonObject.put("username", authentication.getName());
+                        out.write(jsonObject.toString());
+                        out.flush();
+                        out.close();
+                    }
+                })
+                .failureHandler(new AuthenticationFailureHandler() {
+                    @Override
+                    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
+                        PrintWriter out = response.getWriter();
+                        response.setContentType("application/json;charset=utf-8");
+                        JSONObject jsonObject = new JSONObject();
+                        jsonObject.put("status", 401);
+                        jsonObject.put("message", "login failure");
+                        out.write(jsonObject.toString());
+                        out.flush();
+                        out.close();
+                    }
+                })
+                .loginProcessingUrl("/")
                 .and()
                 .logout()
                 .logoutUrl("/logout")
@@ -65,7 +84,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         response.setContentType("application/json;charset=utf-8");
                         PrintWriter out = response.getWriter();
                         request.getSession().invalidate();
-                        out.write("{\"status\":200, \"message\": \"logout successfully\"}");
+                        JSONObject jsonObject = new JSONObject();
+                        jsonObject.put("status", 200);
+                        jsonObject.put("message", "logout successfully");
+                        out.write(jsonObject.toString());
                         out.flush();
                         out.close();
                     }

@@ -1,0 +1,5 @@
+com\diving_fish\wordladder\controller\WordLadderController.class
+com\diving_fish\wordladder\wordladder\WordLink.class
+com\diving_fish\wordladder\wordladder\WordLadder.class
+com\diving_fish\wordladder\config\CorsConfig.class
+com\diving_fish\wordladder\WordLadder.class
