@@ -1,11 +1,7 @@
 package com.diving_fish.wordladder.controller;
 import com.diving_fish.wordladder.wordladder.WordLadder;
-import javafx.geometry.Pos;
-import net.sf.json.JSON;
-import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.NameValuePair;
-import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -14,12 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Map;
 
 
 @RestController
@@ -88,7 +81,7 @@ public class WordLadderController {
             response.put("message", "You need login to do this");
             return response;
         }
-        ClassPathResource dict = new ClassPathResource("dictionary.txt");
+        ClassPathResource dict = new ClassPathResource("static/dictionary.txt");
         WordLadder wl = new WordLadder(dict.getFile().getAbsolutePath());
         ArrayList<String> list = wl.generate(start, end);
         System.out.println(list);
@@ -108,7 +101,7 @@ public class WordLadderController {
             response.put("message", "You need login to do this");
             return response;
         }
-        ClassPathResource dict = new ClassPathResource("dictionary.txt");
+        ClassPathResource dict = new ClassPathResource("static/dictionary.txt");
         WordLadder wl = new WordLadder(dict.getFile().getAbsolutePath());
         response.put("has", wl.in_dict(word));
         return response;

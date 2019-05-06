@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="952285e0-73bd-4e84-9816-55352d6df198" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/diving_fish/login/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/diving_fish/login/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WordLadder/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WordLadder/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WordLadder/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WordLadder/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WordLadder/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WordLadder/WordLadder.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WordLadder/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WordLadder/src/main/java/com/diving_fish/wordladder/WordLadder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WordLadder/src/main/java/com/diving_fish/wordladder/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WordLadder/src/main/java/com/diving_fish/wordladder/controller/WordLadderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WordLadder/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WordLadder/src/main/resources/dictionary.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Homework2 - WordLadder &amp; SpringBoot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Homework2 - WordLadder &amp; SpringBoot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Homework2 - WordLadder &amp; SpringBoot/src/main/java/com/diving_fish/wordLadder/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diving_fish/login/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Homework2 - WordLadder &amp; SpringBoot/src/main/java/com/diving_fish/wordLadder/wordladder/WordLadder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../WordLadder/src/main/java/com/diving_fish/wordladder/wordladder/WordLadder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Homework2 - WordLadder &amp; SpringBoot/target/classes/com/diving_fish/wordLadder/config/SecurityConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Homework2 - WordLadder &amp; SpringBoot/target/classes/com/diving_fish/wordLadder/config/SecurityConfig$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Homework2 - WordLadder &amp; SpringBoot/target/classes/com/diving_fish/wordLadder/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Homework2 - WordLadder &amp; SpringBoot/target/classes/com/diving_fish/wordLadder/config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Homework2 - WordLadder &amp; SpringBoot/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../Homework2 - WordLadder &amp; SpringBoot/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WordLadder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WordLadder/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -196,6 +178,13 @@
               <item name="login" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Login" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -240,7 +229,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
