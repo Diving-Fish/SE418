@@ -2,9 +2,9 @@
 
 ## Dockers:
 
-Login: https://cloud.docker.com/repository/docker/divingfish/login
+Login: https://hub.docker.com/r/divingfish/login
 
-WordLadder: https://cloud.docker.com/repository/docker/divingfish/wordladder
+WordLadder: https://hub.docker.com/r/divingfish/wordladder
 
 ## Directory:
 
