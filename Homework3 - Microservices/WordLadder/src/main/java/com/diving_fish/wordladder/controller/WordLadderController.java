@@ -28,7 +28,7 @@ public class WordLadderController {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         System.out.println(username + ", " + password);
-        PostMethod postMethod = new PostMethod(path + "/");
+        PostMethod postMethod = new PostMethod("http://login:8000");
         postMethod.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
         NameValuePair[] data = {
                 new NameValuePair("username", username),
@@ -82,7 +82,7 @@ public class WordLadderController {
             return response;
         }
         ClassPathResource dict = new ClassPathResource("static/dictionary.txt");
-        WordLadder wl = new WordLadder(dict.getFile().getAbsolutePath());
+        WordLadder wl = new WordLadder(dict.getInputStream());
         ArrayList<String> list = wl.generate(start, end);
         System.out.println(list);
         JSONArray result = JSONArray.fromObject(list);
@@ -102,7 +102,7 @@ public class WordLadderController {
             return response;
         }
         ClassPathResource dict = new ClassPathResource("static/dictionary.txt");
-        WordLadder wl = new WordLadder(dict.getFile().getAbsolutePath());
+        WordLadder wl = new WordLadder(dict.getInputStream());
         response.put("has", wl.in_dict(word));
         return response;
     }

@@ -15,10 +15,9 @@ class WordLink {
 public class WordLadder {
     public Set<String> dictionary = new TreeSet<String>();
 
-    public WordLadder(String path) {
-        File f = new File(path);
+    public WordLadder(InputStream i) {
         try {
-            BufferedReader br = new BufferedReader(new FileReader(f));
+            BufferedReader br = new BufferedReader(new InputStreamReader(i));
             String line;
             while ((line = br.readLine()) != null) {
                 dictionary.add(line);
